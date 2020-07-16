@@ -8,4 +8,12 @@ public class Animals {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long animalid;
+
+    @Column(nullable = false)
+    private String animaltype;
+
+    @Column
+    private String incomingzoo;
+
+
 }
