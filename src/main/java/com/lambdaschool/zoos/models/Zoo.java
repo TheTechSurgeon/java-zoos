@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="zoos")
-public class Zoos {
+public class Zoo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long zooid;
@@ -19,14 +19,13 @@ public class Zoos {
     @OneToMany(mappedBy = "zoo",
     cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value="zoos",allowSetters = true)
-    //todo This isn't right
-    private Set<ZooAnimals> zooAnimals = new HashSet<>();
+    private Set<ZooAnimal> zooAnimal = new HashSet<>();
     //default constructor
-    public Zoos(){
+    public Zoo(){
 
     }
     //constructor
-    public Zoos(long zooid, String zooname) {
+    public Zoo(long zooid, String zooname) {
         this.zooid = zooid;
         this.zooname = zooname;
     }
